@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Generated reports (never commit a rendered standup report)
+/standup.html
+/standup.md
+/*.html
+
+# OS
+.DS_Store
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
