@@ -1,16 +1,19 @@
 # agent-standup
 
+[![CI](https://github.com/oh-namgyu/agent-standup/actions/workflows/ci.yml/badge.svg)](https://github.com/oh-namgyu/agent-standup/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+> **한글 요약**
+>
+> - `~/.claude/projects` 의 세션 기록과 로컬 `git log` 를 한 기간 동안 나란히 모아 **붙여넣기용 스탠드업 리포트**를 만드는 CLI 입니다.
+> - 설치할 것이 없습니다. Python 3.9 이상이면 되고 **외부 의존성이 0개** (표준 라이브러리 + 시스템 `git` 바이너리)입니다.
+> - 바로 실행: `python3 -m agent_standup --since=7d` → 최근 7일 리포트가 Markdown 으로 표준출력에 나옵니다.
+> - 커밋의 `Co-Authored-By: Claude` 트레일러로 **AI-assisted 커밋과 그 외 커밋을 구분**해 보여줍니다 (인과관계 주장이 아니라 병치입니다 — 아래 "How it works" 참고).
+> - 결과물에 **대화 내용은 들어가지 않습니다.** 세션 활동 수치와, AI-assisted 로 분류된 커밋의 제목·증감량만 담깁니다.
+> - 계정 이름과 홈 경로는 **기본으로 가려지고**, 출력 직전 한 번 더 스캔해 놓친 것이 있으면 **아예 출력하지 않는** 방어선이 있습니다.
+> - `--html` 로 자바스크립트 없는 단일 HTML 페이지도 만들 수 있습니다.
+
 Turn Claude Code session activity and your git commit history into one paste-ready standup report.
-
-## 한눈 요약
-
-- `~/.claude/projects` 의 세션 기록과 로컬 `git log` 를 한 기간 동안 나란히 모아 **붙여넣기용 스탠드업 리포트**를 만드는 CLI 입니다.
-- 설치할 것이 없습니다. Python 3.9 이상이면 되고 **외부 의존성이 0개** (표준 라이브러리 + 시스템 `git` 바이너리)입니다.
-- 바로 실행: `python3 -m agent_standup --since=7d` → 최근 7일 리포트가 Markdown 으로 표준출력에 나옵니다.
-- 커밋의 `Co-Authored-By: Claude` 트레일러로 **AI-assisted 커밋과 그 외 커밋을 구분**해 보여줍니다 (인과관계 주장이 아니라 병치입니다 — 아래 "How it works" 참고).
-- 결과물에 **대화 내용은 들어가지 않습니다.** 세션 활동 수치와, AI-assisted 로 분류된 커밋의 제목·증감량만 담깁니다.
-- 계정 이름과 홈 경로는 **기본으로 가려지고**, 출력 직전 한 번 더 스캔해 놓친 것이 있으면 **아예 출력하지 않는** 방어선이 있습니다.
-- `--html` 로 자바스크립트 없는 단일 HTML 페이지도 만들 수 있습니다.
 
 ## What it is
 
@@ -142,4 +145,4 @@ upstream and re-sync so the copies stay diffable against their source.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT — see [LICENSE](LICENSE). Security policy: [SECURITY.md](SECURITY.md).
